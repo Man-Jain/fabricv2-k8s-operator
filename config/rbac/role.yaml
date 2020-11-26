@@ -1,0 +1,88 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - cas
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - cas/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - chaincodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - chaincodes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - orderers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - orderers/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - peers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - peers/status
+  verbs:
+  - get
+  - patch
+  - update

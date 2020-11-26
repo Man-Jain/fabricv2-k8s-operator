@@ -1,0 +1,20 @@
+# permissions for end users to view cas.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: ca-viewer-role
+rules:
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - cas
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - cas/status
+  verbs:
+  - get

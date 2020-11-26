@@ -1,0 +1,24 @@
+# permissions for end users to edit orderers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: orderer-editor-role
+rules:
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - orderers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - orderers/status
+  verbs:
+  - get

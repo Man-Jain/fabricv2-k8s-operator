@@ -1,0 +1,24 @@
+# permissions for end users to edit chaincodes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: chaincode-editor-role
+rules:
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - chaincodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - chaincodes/status
+  verbs:
+  - get

@@ -1,0 +1,20 @@
+# permissions for end users to view peers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: peer-viewer-role
+rules:
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - peers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - fabric.hyperledger.org
+  resources:
+  - peers/status
+  verbs:
+  - get

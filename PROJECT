@@ -1,0 +1,20 @@
+domain: hyperledger.org
+layout: go.kubebuilder.io/v2
+projectName: fabricv2-operator
+repo: github.com/Man-Jain/fabricv2-k8s-operator
+resources:
+- group: fabric
+  kind: CA
+  version: v1alpha1
+- group: fabric
+  kind: Peer
+  version: v1alpha1
+- group: fabric
+  kind: Orderer
+  version: v1alpha1
+- group: fabric
+  kind: Chaincode
+  version: v1alpha1
+version: 3-alpha
+plugins:
+  go.sdk.operatorframework.io/v2-alpha: {}

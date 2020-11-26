@@ -1,0 +1,7 @@
+apiVersion: fabric.hyperledger.org/v1alpha1
+kind: CA
+metadata:
+  name: ca-sample
+spec:
+  # Add fields here
+  foo: bar

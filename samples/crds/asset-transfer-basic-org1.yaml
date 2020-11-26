@@ -1,0 +1,24 @@
+apiVersion: fabric.hyperledger.org/v1alpha1
+kind: Chaincode
+metadata:
+  name: asset-transfer-basic-org1
+spec:
+  coreChaincodeId: "basic_1.0:3c62bbf395d97f5d8fc55898e942c57254c27f056fe26055d1085696f7db18c7"
+  chaincodeSpec:
+    # To specify resource limits for this Peer node,
+    # use kubernetes resource requirements spec
+    # resources:
+    #   requests:
+    #     memory: "32Mi"
+    #     cpu: "200m"
+    #   limits:
+    #     memory: "1024mi"
+    #     cpu: "250"  
+    image: "hyperledger/asset-transfer-basic"
+    # Add all the configurable peer parameters as
+    # name-value pairs
+    ports: [8999]
+    configParams:
+      - name: SAMPLE_VERSION
+        value: v1
+      

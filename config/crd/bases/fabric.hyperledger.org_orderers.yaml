@@ -1,0 +1,178 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.3.0
+  creationTimestamp: null
+  name: orderers.fabric.hyperledger.org
+spec:
+  group: fabric.hyperledger.org
+  names:
+    kind: Orderer
+    listKind: OrdererList
+    plural: orderers
+    singular: orderer
+  scope: Namespaced
+  subresources:
+    status: {}
+  validation:
+    openAPIV3Schema:
+      description: Orderer is the Schema for the orderers API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: OrdererSpec defines the desired state of Orderer
+          properties:
+            genesisblock:
+              type: string
+            ordererspec:
+              description: Foo is an example field of Orderer. Edit Orderer_types.go
+                to remove/update
+              properties:
+                msp:
+                  description: The corresponding msp structure for node such as orderer
+                    or peer
+                  properties:
+                    adminCerts:
+                      description: Administrator's certificates
+                      items:
+                        type: string
+                      type: array
+                    caCerts:
+                      description: CA certificates
+                      items:
+                        type: string
+                      type: array
+                    configFile:
+                      type: string
+                    keyStore:
+                      description: Node private key
+                      type: string
+                    signCerts:
+                      description: Node certificate
+                      type: string
+                    tlsCacerts:
+                      description: ca tls certificates
+                      items:
+                        type: string
+                      type: array
+                  required:
+                  - caCerts
+                  - configFile
+                  - keyStore
+                  - signCerts
+                  type: object
+                nodeSpec:
+                  properties:
+                    configParams:
+                      items:
+                        properties:
+                          name:
+                            type: string
+                          value:
+                            type: string
+                        required:
+                        - name
+                        - value
+                        type: object
+                      type: array
+                    image:
+                      type: string
+                    ports:
+                      items:
+                        type: integer
+                      type: array
+                    resources:
+                      description: ResourceRequirements describes the compute resource
+                        requirements.
+                      properties:
+                        limits:
+                          additionalProperties:
+                            anyOf:
+                            - type: integer
+                            - type: string
+                            pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                            x-kubernetes-int-or-string: true
+                          description: 'Limits describes the maximum amount of compute
+                            resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/'
+                          type: object
+                        requests:
+                          additionalProperties:
+                            anyOf:
+                            - type: integer
+                            - type: string
+                            pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                            x-kubernetes-int-or-string: true
+                          description: 'Requests describes the minimum amount of compute
+                            resources required. If Requests is omitted for a container,
+                            it defaults to Limits if that is explicitly specified,
+                            otherwise to an implementation-defined value. More info:
+                            https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/'
+                          type: object
+                      type: object
+                    storageClass:
+                      type: string
+                    storageSize:
+                      type: string
+                  required:
+                  - configParams
+                  - image
+                  type: object
+                tls:
+                  properties:
+                    tlsCaCert:
+                      description: trusted root certificate
+                      type: string
+                    tlsCert:
+                      description: Node tls certificate
+                      type: string
+                    tlsKey:
+                      description: Node tls private key
+                      type: string
+                  required:
+                  - tlsCaCert
+                  - tlsCert
+                  - tlsKey
+                  type: object
+              required:
+              - msp
+              - tls
+              type: object
+          required:
+          - genesisblock
+          type: object
+        status:
+          properties:
+            accessPoint:
+              type: string
+            externalPort:
+              type: integer
+          required:
+          - accessPoint
+          - externalPort
+          type: object
+      type: object
+  version: v1alpha1
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

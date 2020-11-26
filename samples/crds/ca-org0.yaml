@@ -1,0 +1,45 @@
+apiVersion: fabric.hyperledger.org/v1alpha1
+kind: CA
+metadata:
+  name: ca-org0
+spec:
+  # The CA admin id and password to start up a CA server
+  admin: "sampleadmin"
+  adminPassword: "samplepassword"
+  config: "dmVyc2lvbjogMS4yLjAKcG9ydDogNzA1NApkZWJ1ZzogZmFsc2UKY3Jsc2l6ZWxpbWl0OiA1MTIwMDAKdGxzOgogIGVuYWJsZWQ6IHRydWUKICBjZXJ0ZmlsZToKICBrZXlmaWxlOgogIGNsaWVudGF1dGg6CiAgICB0eXBlOiBub2NsaWVudGNlcnQKICAgIGNlcnRmaWxlczoKY2E6CiAgbmFtZTogT3JnMUNBCiAga2V5ZmlsZToKICBjZXJ0ZmlsZToKICBjaGFpbmZpbGU6CmNybDoKICBleHBpcnk6IDI0aApyZWdpc3RyeToKICBtYXhlbnJvbGxtZW50czogLTEKICBpZGVudGl0aWVzOgogICAgIC0gbmFtZTogYWRtaW4KICAgICAgIHBhc3M6IGFkbWlucHcKICAgICAgIHR5cGU6IGNsaWVudAogICAgICAgYWZmaWxpYXRpb246ICIiCiAgICAgICBhdHRyczoKICAgICAgICAgIGhmLlJlZ2lzdHJhci5Sb2xlczogIioiCiAgICAgICAgICBoZi5SZWdpc3RyYXIuRGVsZWdhdGVSb2xlczogIioiCiAgICAgICAgICBoZi5SZXZva2VyOiB0cnVlCiAgICAgICAgICBoZi5JbnRlcm1lZGlhdGVDQTogdHJ1ZQogICAgICAgICAgaGYuR2VuQ1JMOiB0cnVlCiAgICAgICAgICBoZi5SZWdpc3RyYXIuQXR0cmlidXRlczogIioiCiAgICAgICAgICBoZi5BZmZpbGlhdGlvbk1ncjogdHJ1ZQpkYjoKICB0eXBlOiBzcWxpdGUzCiAgZGF0YXNvdXJjZTogZmFicmljLWNhLXNlcnZlci5kYgogIHRsczoKICAgICAgZW5hYmxlZDogZmFsc2UKICAgICAgY2VydGZpbGVzOgogICAgICBjbGllbnQ6CiAgICAgICAgY2VydGZpbGU6CiAgICAgICAga2V5ZmlsZToKbGRhcDoKICAgZW5hYmxlZDogZmFsc2UKICAgdXJsOiBsZGFwOi8vPGFkbWluRE4+OjxhZG1pblBhc3N3b3JkPkA8aG9zdD46PHBvcnQ+LzxiYXNlPgogICB0bHM6CiAgICAgIGNlcnRmaWxlczoKICAgICAgY2xpZW50OgogICAgICAgICBjZXJ0ZmlsZToKICAgICAgICAga2V5ZmlsZToKICAgYXR0cmlidXRlOgogICAgICBuYW1lczogWyd1aWQnLCdtZW1iZXInXQogICAgICBjb252ZXJ0ZXJzOgogICAgICAgICAtIG5hbWU6CiAgICAgICAgICAgdmFsdWU6CiAgICAgIG1hcHM6CiAgICAgICAgIGdyb3VwczoKICAgICAgICAgICAgLSBuYW1lOgogICAgICAgICAgICAgIHZhbHVlOgphZmZpbGlhdGlvbnM6CiAgIG9yZzE6CiAgICAgIC0gZGVwYXJ0bWVudDEKICAgICAgLSBkZXBhcnRtZW50MgogICBvcmcyOgogICAgICAtIGRlcGFydG1lbnQxCnNpZ25pbmc6CiAgICBkZWZhdWx0OgogICAgICB1c2FnZToKICAgICAgICAtIGRpZ2l0YWwgc2lnbmF0dXJlCiAgICAgIGV4cGlyeTogODc2MGgKICAgIHByb2ZpbGVzOgogICAgICBjYToKICAgICAgICAgdXNhZ2U6CiAgICAgICAgICAgLSBjZXJ0IHNpZ24KICAgICAgICAgICAtIGNybCBzaWduCiAgICAgICAgIGV4cGlyeTogNDM4MDBoCiAgICAgICAgIGNhY29uc3RyYWludDoKICAgICAgICAgICBpc2NhOiB0cnVlCiAgICAgICAgICAgbWF4cGF0aGxlbjogMAogICAgICB0bHM6CiAgICAgICAgIHVzYWdlOgogICAgICAgICAgICAtIHNpZ25pbmcKICAgICAgICAgICAgLSBrZXkgZW5jaXBoZXJtZW50CiAgICAgICAgICAgIC0gc2VydmVyIGF1dGgKICAgICAgICAgICAgLSBjbGllbnQgYXV0aAogICAgICAgICAgICAtIGtleSBhZ3JlZW1lbnQKICAgICAgICAgZXhwaXJ5OiA4NzYwaApjc3I6CiAgIGNuOiBjYS5vcmcxLmV4YW1wbGUuY29tCiAgIG5hbWVzOgogICAgICAtIEM6IFVTCiAgICAgICAgU1Q6ICJOb3J0aCBDYXJvbGluYSIKICAgICAgICBMOiAiRHVyaGFtIgogICAgICAgIE86IG9yZzEuZXhhbXBsZS5jb20KICAgICAgICBPVToKICAgaG9zdHM6CiAgICAgLSBsb2NhbGhvc3QKICAgICAtIG9yZzEuZXhhbXBsZS5jb20KICAgY2E6CiAgICAgIGV4cGlyeTogMTMxNDAwaAogICAgICBwYXRobGVuZ3RoOiAxCmJjY3NwOgogICAgZGVmYXVsdDogU1cKICAgIHN3OgogICAgICAgIGhhc2g6IFNIQTIKICAgICAgICBzZWN1cml0eTogMjU2CiAgICAgICAgZmlsZWtleXN0b3JlOgogICAgICAgICAgICBrZXlzdG9yZTogbXNwL2tleXN0b3JlCmNhY291bnQ6CmNhZmlsZXM6CmludGVybWVkaWF0ZToKICBwYXJlbnRzZXJ2ZXI6CiAgICB1cmw6CiAgICBjYW5hbWU6CiAgZW5yb2xsbWVudDoKICAgIGhvc3RzOgogICAgcHJvZmlsZToKICAgIGxhYmVsOgogIHRsczoKICAgIGNlcnRmaWxlczoKICAgIGNsaWVudDoKICAgICAgY2VydGZpbGU6CiAgICAgIGtleWZpbGU6Cg=="
+  # If you have an set of certs that you like to use instead of
+  # generating a set by Fabric CA, you can specify as the following.
+  # Certificates and private keys have all to be base64 encoded as
+  # the values of the each item below.
+  # certs:
+  #   cert:
+  #   key:
+  #   tlsCert:
+  #   tlsKey:
+  nodeSpec:
+    # Specify Fabric binaries to be used to setup the fabric CA
+    image: "hyperledger/fabric-ca:1.4"
+  # Optionally, FQDN can also be specified
+  # hosts: ["ca.sample.com", "169.45.20.0"]
+
+  # Specify storage being used by this Certificate Authority.
+    storageClass: "standard"
+    storageSize: "128Mi"
+    ports: [7054]
+  # To specify resource limits for this CA node,
+  # use kubernetes resource requirements spec
+  # resources:
+  #   requests:
+  #     memory: "32Mi"
+  #     cpu: "200m"
+  #   limits:
+  #     memory: "1024mi"
+  #     cpu: "250"
+
+  # To specify more environment variables for Fabric CA, use any Fabric CA
+  # configurable parameters
+    configParams:
+    - name: FABRIC_CA_SERVER_PORT
+      value: "7054"
+    - name: FABRIC_CA_SERVER_DEBUG
+      value: "false"
